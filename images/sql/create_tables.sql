@@ -1,0 +1,4 @@
+CREATE DATABASE Game;
+ALTER ROLE olga SET client_encoding TO 'utf8';
+GRANT ALL PRIVILEGES ON DATABASE Game TO olga;
+
