@@ -1,4 +1,4 @@
-"""chess URL Configuration
+"""chess_game URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from game.views import index_p
+from game.views import index_p, index_set, index_log, index_chess
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_p),
+    path('setting/', index_set),
+    path('login/', index_log),
+    path('chess/', index_chess),
 ]

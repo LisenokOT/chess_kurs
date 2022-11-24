@@ -26,7 +26,7 @@ services:
       dockerfile: images/python/Dockerfile.server
     volumes:
      - ./src:/server  
-    command: bash -rc "python3 chess/manage.py makemigrations && python3 chess/manage.py migrate && python3 chess/manage.py runserver 0.0.0.0:8000"
+    command: bash -rc "python3 chess_game/manage.py makemigrations && python3 chess_game/manage.py migrate && python3 chess_game/manage.py runserver 0.0.0.0:8000"
     stdin_open: true
     tty: true
     env_file:
