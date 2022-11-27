@@ -414,7 +414,7 @@ header {
     vertical-align: middle;
 }
 
-.chess-board .black {
+.chess-board .bg-black {
     width: 10vh;
     height: 10vh;
     background-color: #B98A63;
@@ -422,7 +422,7 @@ header {
     text-align: center;
 }
 
-.chess-board .white {
+.chess-board .bg-white {
     width: 10vh;
     height: 10vh;
     background-color: #F0DFB5;

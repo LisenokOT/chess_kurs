@@ -23,7 +23,7 @@ function setDraggable() {
 }
 
 function setDroppable() {
-    $('.white').droppable({
+    $('.bg-white').droppable({
         drop: function (event, ui) {
             let fromPoly = ui.draggable.attr('name');
             let toPoly = this.id;
@@ -33,7 +33,7 @@ function setDroppable() {
 }
 
 function setDroppable() {
-    $('.black').droppable({
+    $('.bg-black').droppable({
         drop: function (event, ui) {
             let fromPoly = ui.draggable.attr('name');
             let toPoly = this.id;
