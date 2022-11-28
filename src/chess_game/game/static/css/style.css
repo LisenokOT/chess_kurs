@@ -1,6 +1,6 @@
 .figure-black, .figure-white {
-    font-size: 60px;
-    max-height: 60px;
+    font-size: 70px;
+    max-height: 70px;
     cursor: pointer;
 }
 
@@ -401,12 +401,12 @@ header {
     justify-content: center;
 }
 
-.chess-board {
+.table_chess {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-.chess-board td { 
+.table_chess td { 
     border: 1px solid;
     width: 5em; 
     height: 5em; 
@@ -414,7 +414,7 @@ header {
     vertical-align: middle;
 }
 
-.chess-board .bg-black {
+.table_chess .black {
     width: 10vh;
     height: 10vh;
     background-color: #B98A63;
@@ -422,7 +422,7 @@ header {
     text-align: center;
 }
 
-.chess-board .bg-white {
+.table_chess .white {
     width: 10vh;
     height: 10vh;
     background-color: #F0DFB5;
