@@ -34,7 +34,41 @@
 
     <main>
         <div class="container_chess">
-
+            <table class="table_chess">
+                {% for array in board %}
+                    <tr>
+                        {% for temp in array %}
+                            <td class= {{ temp.color|safe }} >
+                                {% if temp.fig == "p" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_pawn.png" %}">
+                                {% elif temp.fig == "P" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_pawn.png" %}">
+                                {% elif temp.fig == "r" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_rock.png" %}">
+                                {% elif temp.fig == "R" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_rock.png" %}">
+                                {% elif temp.fig == "n" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_knight.png" %}">
+                                {% elif temp.fig == "N" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_knight.png" %}">
+                                {% elif temp.fig == "k" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_king.png" %}">
+                                {% elif temp.fig == "K" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_king.png" %}">
+                                {% elif temp.fig == "b" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_bishop.png" %}">
+                                {% elif temp.fig == "B" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_bishop.png" %}">
+                                {% elif temp.fig == "q" %}
+                                    <img height="45px" width="45px" src="{% static "images/black_queen.png" %}">
+                                {% elif temp.fig == "Q" %}
+                                    <img height="45px" width="45px" src="{% static "images/white_queen.png" %}">
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
         <div class="menu_chess">
             <div class="timer"><span class="time_enter" id="black_timer"></span></div>
@@ -57,104 +91,4 @@
     <script language="JavaScript" type="text/javascript" src={% static "js/chess_move.js" %}></script>
 </body>
 </html>
-            <!--<table class="table_chess">
-                <tr>
-                    <th></th>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
-                    <th>e</th>
-                    <th>f</th>
-                    <th>g</th>
-                    <th>h</th>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td class="square bg-black" id="a1"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_rock.png" %}"></td>
-                    <td class="square bg-white" id="a2"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_knight.png" %}"></td>
-                    <td class="square bg-black" id="a3"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_bishop.png" %}"></td>
-                    <td class="square bg-white" id="a4"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_queen.png" %}"></td>
-                    <td class="square bg-black" id="a5"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_king.png" %}"></td>
-                    <td class="square bg-white" id="a6"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_bishop.png" %}"></td>
-                    <td class="square bg-black" id="a7"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_knight.png" %}"></td>
-                    <td class="square bg-white" id="a8"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_rock.png" %}"></td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/black_pawn.png" %}"></td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                    <td class="square bg-white"></td>
-                    <td class="square bg-black"></td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_pawn.png" %}"></td>
-                </tr>
-                <tr>
-                    <th>8</th>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_rock.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_knight.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_bishop.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_queen.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_king.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_bishop.png" %}"></td>
-                    <td class="square bg-white"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_knight.png" %}"></td>
-                    <td class="square bg-black"><img class= "figure-black" height="40px" width="40px" src="{% static "images/white_rock.png" %}"></td>
-                </tr>
-            </table>-->
+            
