@@ -30,23 +30,6 @@ header {
     text-decoration: none;
 }
 
- .settings,   .fon,   .style-figures,   .style-board,  .light,  .dark,
- .figure_settings {
-    z-index: 5;
-    padding: 10px;
-    font-size: 20px;
-    text-decoration: none;
-    color: rgb(54, 52, 48);
-}
-
-.setting_exit {
-    z-index: 5;
-    padding: 10px;
-    font-size: 20px;
-    text-decoration: none;
-    color: rgb(186, 174, 146);
-    border-bottom: solid rgb(187, 187, 187);
-}
 
 .game_header,  .edu_header {
     z-index: 5;
@@ -57,37 +40,9 @@ header {
     color: rgb(54, 52, 48);
 }
 
-.logo_header:hover,   .login_href:hover,  .settings:hover,   .fon:hover,   .light:hover, 
-  .game_header:hover,   .edu_header:hover,   .style-figures:hover,   
-.style-board:hover,  .setting_exit:hover,  .light:hover,  .dark:hover,  .figure_settings:hover {
+.logo_header:hover, .login_href:hover, .game_header:hover, .edu_header:hover, .setting_exit:hover{
     z-index: 5;
     color: black;
-}
-
-.dropdown{
-    z-index: 5;
-    margin-top: 10px;
-    position: relative;
-    color: rgb(54, 52, 48);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: -50px;
-    background-color: #f1f1f1;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 5;
-    color: rgb(54, 52, 48);
-}
-
-.dropdown-content a {
-    color: rgb(54, 52, 48);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
 }
 
 .container_login {
@@ -289,26 +244,6 @@ header {
     color: black;
 }
 
- .close {
-    z-index: 8;
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    top: -20px;
-    left: 415px;
-    font-size: 38px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 50%;
-    background-color: lightgrey;
-}
-
- .close:hover {
-    z-index: 8;
-    color: rgb(54, 52, 48);
-    background-color: red;
-}
-
  .time_control {
     z-index: 6;
     color: lightgrey;
@@ -393,40 +328,6 @@ header {
     -webkit-box-pack: center;
     justify-content: center;
 }
-
-.table_chess {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.table_chess td { 
-    border: 1px solid;
-    width: 5em; 
-    height: 5em; 
-    text-align: center; 
-    vertical-align: middle;
-}
-.figure{
-    cursor: pointer;
-    
-}
-
-.table_chess .bg-black {
-    width: 10vh;
-    height: 10vh;
-    background-color: #B98A63;
-    vertical-align: center;
-    text-align: center;
-}
-
-.table_chess .bg-white {
-    width: 10vh;
-    height: 10vh;
-    background-color: #F0DFB5;
-    vertical-align: center;
-    text-align: center;
-}
-
 
 .menu_chess {
     position: relative;
@@ -520,4 +421,3 @@ img {
     color: black;
     text-decoration: none;
 }
-

@@ -1,0 +1,48 @@
+.table_chess {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table_chess td { 
+    border: 1px solid;
+    width: 5em; 
+    height: 5em; 
+    text-align: center; 
+    vertical-align: middle;
+}
+.figure{
+    cursor: pointer;
+    
+}
+
+.table_chess .bg-black1 {
+    width: 10vh;
+    height: 10vh;
+    background-color: rgb(170, 105, 50);
+    vertical-align: center;
+    text-align: center;
+}
+
+.table_chess .bg-white1 {
+    width: 10vh;
+    height: 10vh;
+    background-color: rgb(220, 190, 150);
+    vertical-align: center;
+    text-align: center;
+}
+
+.table_chess .bg-black2 {
+    width: 10vh;
+    height: 10vh;
+    background-color: rgb(90, 150, 100);
+    vertical-align: center;
+    text-align: center;
+}
+
+.table_chess .bg-white2 {
+    width: 10vh;
+    height: 10vh;
+    background-color: rgb(240, 246, 180);
+    vertical-align: center;
+    text-align: center;
+}

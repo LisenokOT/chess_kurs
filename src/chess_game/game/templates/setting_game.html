@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Тарарина Ольга">
-    <meta name="description" content="Личный сайт">
-    <meta name="keywords" content="programm,programming,html,css,js,nodejs,python,c++,программирование,программист,код">
-    <link rel="stylesheet" media="all" href="{% static "css/style.css" %}" />
-    <title>Настройки</title>
-</head>
-<body>
-    <header>
-        <header class="header-left">
-            <a class="logo_header" href="../">Главная</a>
-            <a class="edu_header" href="education.html">Обучение</a>
-        </header>
-        <header class="header-right">
-            <div class="dropdown">
-                <a class="settings">Настройки</a>
-                <div class="dropdown-content">
-                    <a class="fon">Фон</a>
-                    <a class="style-figures">Оформление фигур</a>
-                    <a class="style-board">Оформление доски</a>
-                </div>
-              </div>
-              <a class="login_href" href="/login/">Войти</a>
-        </header>
-    </header>
-    <script type="text/javascript" src={% static "js/ind.js" %}></script>
-    <main>
+{% extends "block/header.html" %}
+{% block title %}Настройки{% endblock %}
+{% block main %}
     <div class="start_game_block">
         <div class="container_start_game">
             <div class="container_extra">
@@ -63,6 +35,4 @@
             </div>
         </div>
     </div>
-</main>
-</body>
-</html>
+{% endblock %}

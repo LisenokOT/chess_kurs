@@ -1,73 +1,73 @@
-<!DOCTYPE html>
+{% extends "block/header.html" %}
+{% block title %}Игра{% endblock %}
+{% block main %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Тарарина Ольга">
-    <meta name="description" content="Личный сайт">
-    <meta name="keywords" content="programm,programming,html,css,js,nodejs,python,c++,программирование,программист,код">
-    <link rel="stylesheet" media="all" href="{% static "css/style.css" %}" />
-    {% block extrahead %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
-    {% endblock extrahead %}
-    <link rel="shortcut icon" href="#"/>
-    <title>Игра</title>
-</head>
-<body>
-    <header>
-        <header class="header-left">
-            <a class="logo_header" href="">Главная</a>
-            <a class="game_header" href="/setting/">Игра</a>
-            <a class="edu_header" href="education.html">Обучение</a>
-        </header>
-        <header class="header-right">
-            <div class="dropdown">
-                <a class="settings">Настройки</a>
-                <div class="dropdown-content">
-                    <a class="fon">Фон</a>
-                    <a class="style-figures">Оформление фигур</a>
-                    <a class="style-board">Оформление доски</a>
-                </div>
-              </div>
-            <a class="login_href" href="/login/">Войти</a>
-        </header>
-    </header>
-
-    <main>
+<link rel="stylesheet" href="{% static "css/style_board.css" %}" />
         <div class="container_chess">
             <table class="table_chess">
                 {% for array in board %}
                     <tr>
+                    {% if sty_sess_f == '2' %}
                         {% for temp in array %}
                             <td id= {{ temp.id|safe }} class= {{ temp.color|safe }} >
                                 {% if temp.fig == "p" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_pawn.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_pawn.png" %}">
                                 {% elif temp.fig == "P" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_pawn.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_pawn.png" %}">
                                 {% elif temp.fig == "r" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_rock.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_rock.png" %}">
                                 {% elif temp.fig == "R" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_rock.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_rock.png" %}">
                                 {% elif temp.fig == "n" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_knight.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_knight.png" %}">
                                 {% elif temp.fig == "N" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_knight.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_knight.png" %}">
                                 {% elif temp.fig == "k" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_king.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_king.png" %}">
                                 {% elif temp.fig == "K" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_king.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_king.png" %}">
                                 {% elif temp.fig == "b" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_bishop.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_bishop.png" %}">
                                 {% elif temp.fig == "B" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_bishop.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_bishop.png" %}">
                                 {% elif temp.fig == "q" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/black_queen.png" %}">
+                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_queen.png" %}">
                                 {% elif temp.fig == "Q" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/white_queen.png" %}">
+                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_queen.png" %}">
                                 {% endif %}
                             </td>
                         {% endfor %}
+                    {% else %}
+                        {% for temp in array %}
+                            <td id= {{ temp.id|safe }} class= {{ temp.color|safe }} >
+                                {% if temp.fig == "p" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_p.png" %}">
+                                {% elif temp.fig == "P" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_p.png" %}">
+                                {% elif temp.fig == "r" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_r.png" %}">
+                                {% elif temp.fig == "R" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_r.png" %}">
+                                {% elif temp.fig == "n" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_n.png" %}">
+                                {% elif temp.fig == "N" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_n.png" %}">
+                                {% elif temp.fig == "k" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_k.png" %}">
+                                {% elif temp.fig == "K" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_k.png" %}">
+                                {% elif temp.fig == "b" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_b.png" %}">
+                                {% elif temp.fig == "B" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_b.png" %}">
+                                {% elif temp.fig == "q" %}
+                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_q.png" %}">
+                                {% elif temp.fig == "Q" %}
+                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_q.png" %}">
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    {% endif %}
                     </tr>
                 {% endfor %}
             </table>
@@ -88,9 +88,7 @@
             </div>        
             <div class="timer"><span class="time_enter" id="white_timer"></span></div>
         </div>
-    </main>
     <script language="JavaScript" type="text/javascript" src={% static "js/ind.js" %}></script>
     <script language="JavaScript" type="text/javascript" src={% static "js/chess_move.js" %}></script>
-</body>
-</html>
+{% endblock %}
             

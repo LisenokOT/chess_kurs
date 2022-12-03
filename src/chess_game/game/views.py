@@ -2,8 +2,16 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import chess
 import chess.svg
+import accounts.models
+from setting_user.get_session_style import *
 
-def make_board():
+def make_board(request):
+    if get_style_board(request)=="1":
+        temp_w = "bg-white1"
+        temp_b = "bg-black1"
+    else:
+        temp_w = "bg-white2"
+        temp_b = "bg-black2"
     board_ch = chess.Board()
     array = board_ch.fen().split('/')
     board = list()
@@ -14,14 +22,14 @@ def make_board():
             cell['id'] = x*8 + (t + 1)
             if x%2 == 0:
                 if t%2 == 0:
-                    cell['color'] = "bg-black square"
+                    cell['color'] = temp_b
                 else:
-                    cell['color'] = "bg-white square"
+                    cell['color'] = temp_w
             else:
                 if t%2 == 0:
-                    cell['color'] = "bg-white square"
+                    cell['color'] = temp_w
                 else:
-                    cell['color'] = "bg-black square"
+                    cell['color'] = temp_b
             if len(array[x]) > t:
                 if array[x][t].isdigit():
                     cell['fig'] = ""
@@ -32,27 +40,18 @@ def make_board():
     return board
 
 def index_p(request):
-    return render(request, 'index.html', {})
+    return render(request, 'index.html', {'sty_sess': get_style(request)})
 
 def index_set(request):
-    return render(request, 'setting_game.html', {})
-
-def index_log(request):
-    # if request.method == 'POST':
-    # 	name=request.POST.get('name')
-    # 	email=request.POST.get('email')
-    # 	password=request.POST.get('password')
-    # 	newcontact = Contact(name=name,email=email,password=password)
-    # 	newcontact.save()
-    # 	data = {'name':name, 'email':email, 'password':password }
-    # 	print(data)
-    # 	return JsonResponse(data, safe=False)
-    # else:
-    return render(request, 'login.html', {})
-
+    return render(request, 'setting_game.html', {'sty_sess': get_style(request)})
 
 def index_chess(request):
     contex = {}
-    contex['board'] = make_board()
+    contex['board'] = make_board(request)
+    contex['sty_sess'] = get_style(request)
+    contex['sty_sess_f'] = get_style_figure(request)
             # return JsonResponse(data)
     return render(request, 'chess.html', contex)
+
+def index_edu(request):
+    return render(request, 'education.html', {'sty_sess': get_style(request)})

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="author" content="Тарарина Ольга">
+    <meta name="keywords" content="programm,programming,html,css,js,python,программирование,программист,код">
+    
+    {% if sty_sess == 'dark' %}
+      <link rel="stylesheet" media="all" href="{% static "css/style1.css" %}" />
+    {% else %}
+    <link rel="stylesheet" media="all" href="{% static "css/style.css" %}" />
+    {% endif %}
+    <link rel="icon" type="image/x-icon" href="{% static "images/favicon.ico" %}">
+    <title>{% block title %}{% endblock %}</title>
+  {% endblock %}
+</head>
+<body>
+    <header>
+    {% block header %}
+        <header class="header-left">
+            <a class="logo_header" href="/">Главная</a>
+            <a class="edu_header" href="/edu/">Обучение</a>
+        </header>
+        <header class="header-right">
+              <a class="login_href" href="/seting/setting/">Настройки</a>
+                
+              {% if request.user.is_authenticated %}
+                <a class="login_href" href="/account/profile/">{{ request.user.username }}</a>
+              {% else %}
+                <a class="login_href" href="/account/authorization/">Войти</a>
+              {% endif %}
+        </header>
+    </header>
+      {% endblock %}
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <script type="text/javascript" src={% static "js/ind.js" %}></script>
+</body>
+</html>
+      
