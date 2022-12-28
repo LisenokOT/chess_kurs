@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from setting_user.get_session_style import *
 from .forms import *
 from .models import *
-
+ 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = 'register.html'
@@ -51,7 +51,7 @@ def logout_user(request):
 @login_required
 def profile(request):
     context = {
-        'reiting': ChessReiting.objects.get(author=request.user)
+        'reiting': ChessReiting.objects.get(author=request.user),
+        'sty_sess': get_style(request)
     }
-    context = {'sty_sess': get_style(request)}
     return render(request, 'profile.html', context)

@@ -5,6 +5,7 @@ import chess.svg
 import accounts.models
 from setting_user.get_session_style import *
 
+
 def make_board(request):
     if get_style_board(request)=="1":
         temp_w = "bg-white1"
@@ -52,6 +53,19 @@ def index_chess(request):
     contex['sty_sess_f'] = get_style_figure(request)
             # return JsonResponse(data)
     return render(request, 'chess.html', contex)
+
+def move(request):
+    print("eee")
+    contex = {}
+    if True:
+    # if chess.Move.from_uci("g2g3") in board.legal_moves:
+        # contex['board'] = move_f(request)
+        # contex['sty_sess'] = get_style(request)
+        # contex['sty_sess_f'] = get_style_figure(request)
+        return render(request, 'chess.html', contex)
+    else:
+        return render(request, 'chess.html', contex)
+
 
 def index_edu(request):
     return render(request, 'education.html', {'sty_sess': get_style(request)})

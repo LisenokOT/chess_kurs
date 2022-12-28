@@ -3,37 +3,37 @@
 {% block main %}
 {% load static %}
 <link rel="stylesheet" href="{% static "css/style_board.css" %}" />
-        <div class="container_chess">
+        <div class="container_chess"> 
             <table class="table_chess">
                 {% for array in board %}
                     <tr>
                     {% if sty_sess_f == '2' %}
                         {% for temp in array %}
-                            <td id= {{ temp.id|safe }} class= {{ temp.color|safe }} >
+                            <td id= {{ temp.id|safe }} class={{ temp.color|safe }} >
                                 {% if temp.fig == "p" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_pawn.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/black_pawn.png" %}"></div>
                                 {% elif temp.fig == "P" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_pawn.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_pawn.png" %}"></div>
                                 {% elif temp.fig == "r" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_rock.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img  height="45px" width="45px" src="{% static "images/figure_st2/black_rock.png" %}"></div>
                                 {% elif temp.fig == "R" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_rock.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_rock.png" %}"></div>
                                 {% elif temp.fig == "n" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_knight.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/black_knight.png" %}"></div>
                                 {% elif temp.fig == "N" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_knight.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_knight.png" %}"></div>
                                 {% elif temp.fig == "k" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_king.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/black_king.png" %}"></div>
                                 {% elif temp.fig == "K" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_king.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_king.png" %}"></div>
                                 {% elif temp.fig == "b" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_bishop.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/black_bishop.png" %}"></div>
                                 {% elif temp.fig == "B" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_bishop.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_bishop.png" %}"></div>
                                 {% elif temp.fig == "q" %}
-                                    <img class="figure figure-black" height="45px" width="45px" src="{% static "images/figure_st2/black_queen.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/black_queen.png" %}"></div>
                                 {% elif temp.fig == "Q" %}
-                                    <img class="figure figure-white" height="45px" width="45px" src="{% static "images/figure_st2/white_queen.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="45px" width="45px" src="{% static "images/figure_st2/white_queen.png" %}"></div>
                                 {% endif %}
                             </td>
                         {% endfor %}
@@ -41,29 +41,29 @@
                         {% for temp in array %}
                             <td id= {{ temp.id|safe }} class= {{ temp.color|safe }} >
                                 {% if temp.fig == "p" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_p.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_p.png" %}"></div>
                                 {% elif temp.fig == "P" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_p.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_p.png" %}"></div>
                                 {% elif temp.fig == "r" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_r.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_r.png" %}"></div>
                                 {% elif temp.fig == "R" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_r.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_r.png" %}"></div>
                                 {% elif temp.fig == "n" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_n.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_n.png" %}"></div>
                                 {% elif temp.fig == "N" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_n.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_n.png" %}"></div>
                                 {% elif temp.fig == "k" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_k.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_k.png" %}"></div>
                                 {% elif temp.fig == "K" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_k.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_k.png" %}"></div>
                                 {% elif temp.fig == "b" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_b.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_b.png" %}"></div>
                                 {% elif temp.fig == "B" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_b.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_b.png" %}"></div>
                                 {% elif temp.fig == "q" %}
-                                    <img class="figure figure-black" height="60px" width="40px" src="{% static "images/figure_st1/black_q.png" %}">
+                                    <div class="figure-black" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/black_q.png" %}"></div>
                                 {% elif temp.fig == "Q" %}
-                                    <img class="figure figure-white" height="60px" width="40px" src="{% static "images/figure_st1/white_q.png" %}">
+                                    <div class="figure-white" id= {{ temp.fig|safe }} name={{ temp.id|safe }}><img height="60px" width="40px" src="{% static "images/figure_st1/white_q.png" %}"></div>
                                 {% endif %}
                             </td>
                         {% endfor %}

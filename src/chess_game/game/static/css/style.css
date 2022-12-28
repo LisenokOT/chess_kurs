@@ -5,7 +5,6 @@ body {
 
 /*  HEADER    */
 header {
-    display: -webkit-box;
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -46,18 +45,18 @@ header {
 }
 
 .container_login {
-    z-index: 5;
+    position: absolute;
     padding: 30px;
     background-color: lightgrey;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    display: -webkit-box;
+    box-shadow: 0px 8px 16px 0px rgb(60, 57, 52);
     display: flex;
-    -webkit-box-align: center;
+    flex-direction: column;
     align-items: center;
-    align-content: center;
-    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.container_login_wrapper{
+    display:grid;
     justify-content: center;
 }
 
@@ -79,9 +78,17 @@ header {
     margin-bottom: 30px;
 }
 
+
 .login_text{
+    display:block;
     font-size: 16px;
     margin-bottom: 5px;
+    width: 200px;
+}
+
+.form-input{
+    padding:3px;
+    border-radius:10px;
 }
 
 #enter {
@@ -91,13 +98,30 @@ header {
     background-color: blue;
     color: white;
     border: 0;
-    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.registration_button{
+    font-size: 25px;
+    margin-bottom: 20px;
+    width: 278px;
+    background-color: blue;
+    color: white;
+    border-left: 5px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     align-content: center;
     -webkit-box-pack: center;
     justify-content: center;
+}
+
+.registration_button:hover {
+    background-color: #3552CF;
 }
 
 #enter:hover {
@@ -113,7 +137,6 @@ header {
     left: 0;
     height: 100%;
     min-width: 100%;
-    display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -127,7 +150,6 @@ header {
     position: absolute;
     padding: 30px;
     background-color: lightgrey;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -140,18 +162,25 @@ header {
 }
 
  .main_href{
+    height: 20vh;
+    width: 30vw;
     z-index: 2;
     padding: 10px;
     color: black;
     font-size: 30px;
     text-decoration: none;
+    background: rgb(216, 211, 201);
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
  .main_href:hover{
     z-index: 5;
-    color: black;
+    padding: 10px;
+    color: rgb(36, 49, 53);
+    background: rgb(109, 108, 107);
 }
-
 
  .start_game_block {
     z-index: 6;
@@ -160,7 +189,6 @@ header {
     left: 0;
     height: 100%;
     min-width: 100%;
-    display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -171,7 +199,6 @@ header {
 
  .container_start_game {
     position: relative;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -185,7 +212,6 @@ header {
     color: rgb(80, 80, 80);
     background-color: lightgrey;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -201,7 +227,6 @@ header {
     z-index: 6;
     padding: 20px;
     background-color: lightgrey;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -219,7 +244,6 @@ header {
     padding: 20px;
     padding-bottom: 40px;
     background-color: lightgrey;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -297,7 +321,6 @@ header {
     appearance: none;
 }
 
-
  input[type='range']::-webkit-slider-thumb {
     width: 30px;
     height: 18px;
@@ -317,7 +340,6 @@ header {
     top: 3vh;
     width: 70vw;
     height: 90vh;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -331,7 +353,6 @@ header {
 
 .menu_chess {
     position: relative;
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -365,7 +386,6 @@ header {
 }
 
  .container_menu {
-    display: -webkit-box;
     display: flex;
     flex-direction: column;
     padding-top: 10px;
@@ -393,7 +413,6 @@ img {
 }
 
 /*  EDUCATION  */
-
  .edu {
     margin-left: 250px; 
     margin-right: 250px;
@@ -420,4 +439,30 @@ img {
 .info_for_edu:hover {
     color: black;
     text-decoration: none;
+}
+
+.container_setting{
+    display: table;
+    box-sizing: border-box;
+    width: 90vw;
+    height: 30vh;
+    text-align: center;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
+
+.post_form_set{
+    display: table-cell;
+    vertical-align: top;
+    width: 30vw;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 5px #444;
+}
+
+.post_form_set:hover{
+    box-shadow: 8px 8px 5px rgb(83, 81, 81);
+    background-image: linear-gradient(180deg, rgb(251, 252, 192), rgb(100, 100, 98) 40%, rgb(4, 12, 19));
+}
+
+.container_prof_wrapper{
+    width: 20vw;
 }

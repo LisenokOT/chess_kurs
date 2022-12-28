@@ -11,9 +11,11 @@
     vertical-align: middle;
 }
 .figure{
+    font-size: 60px;
+    max-height: 60px;
     cursor: pointer;
-    
 }
+
 
 .table_chess .bg-black1 {
     width: 10vh;
